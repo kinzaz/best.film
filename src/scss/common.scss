@@ -1,0 +1,53 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.block-title {
+    &__title {
+        font-size: rem(40);
+        font-weight: 600;
+        line-height: math.div( 54, 40);
+        &_big {
+            font-size: rem(54);
+            font-weight: 800;
+            line-height: math.div(73, 54);
+        }
+    }
+    &__text {
+        font-size: rem(16);
+        font-weight: 400;
+        letter-spacing: 0.01em;
+    }
+}
+
+.button {
+    background-color: #F85A47;
+    color: #fff;
+    @media (any-hover: hover){
+        &:hover {
+			background-color: #ff4632;
+		}
+    };
+    &__label {
+        position: absolute;
+        font-size: rem(12);
+        color: #fff;
+        background-color: rgba($color: #000000, $alpha: .4);
+        @extend %inter;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        transition: background-color 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: rgba($color: #000000, $alpha: 0.7);
+            }
+        }
+    }
+}
+
+
+.section--hidden {
+    opacity: 0;
+    transform: translateY(200px);
+}
+.section {
+    transition: all 1s ease 0s;
+}

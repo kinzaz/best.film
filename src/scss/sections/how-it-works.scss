@@ -1,0 +1,126 @@
+.how-it-works {
+	@include adaptiveValue('padding-top', 223, 80, 0, 1170, 320);
+	@include adaptiveValue('padding-bottom', 223, 80, 0, 1170, 320);
+
+	// .how-it-works__container
+
+	// .how-it-works__block
+
+
+}
+.block-works {
+	text-align: center;
+
+	// .block-works__title
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 70, 40, 0, 1170, 320);
+		@include adaptiveValue("font-size", 40, 30, 0, 1170, 320);
+	}
+
+	// .block-works__items
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: em(767)){
+			  justify-content: space-around;
+		}
+		@include adaptiveValue("colomn-gap", 30, 30);
+		@include adaptiveValue("row-gap", 60, 30, 0, 767, 502);
+		@include adaptiveValue("row-gap", 60, 50, 0, 502, 320);
+		flex-wrap: wrap;
+		@media (min-width:em(991)){
+			padding: 0 35px;
+		}
+	}
+
+	// .block-works__item
+
+}
+
+
+// ========= CARD ==========================================================================
+.card-works {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include adaptiveValue("max-width", 260, 220, 0, 1170, 767);
+	@include adaptiveValue("max-width", 260, 210, 1, 767, 502);
+	@include adaptiveValue("max-width", 260, 180, 1, 502, 320);
+	position: relative;
+	@media (min-width: em(767)){
+		&:not(:last-child):after {
+
+			content: '';
+			background: url('@img/border_1.svg') 0 0 / 100% no-repeat;		
+			position: absolute;
+			top: 43px;
+			width: 210px;
+			height: 11px;
+			@include adaptiveValue("right", -183, -77, 0, 1170, 767);
+			@include adaptiveValue("width", 210, 115, 0, 1170, 767);
+		}	  
+	}
+
+
+	// .card-works__illustration
+	&__illustration {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include adaptiveValue("width", 90, 75, 0, 1170, 767);
+		@include adaptiveValue("height", 90, 75, 0, 1170, 767);
+		@include adaptiveValue("width", 90, 75, 1, 767, 502);
+		@include adaptiveValue("height", 90, 75, 1, 767, 502);
+		@include adaptiveValue("width", 90, 75, 1, 502, 320);
+		@include adaptiveValue("height", 90, 75, 1, 502, 320);
+		border-radius: 20px;
+		margin-bottom: rem(70);
+		@include adaptiveValue("margin-bottom", 70, 50, 0, 1170, 767);
+		@include adaptiveValue("margin-bottom", 70, 50, 1, 767, 502);
+		@include adaptiveValue("margin-bottom", 50, 40, 1, 502, 320);
+	}
+
+	// .card-works__title
+	&__title {
+		@include adaptiveValue("font-size", 22, 17, 0, 1170, 767);
+		@include adaptiveValue("font-size", 22, 17, 1, 767, 502);
+		@include adaptiveValue("font-size", 22, 17, 1, 502, 320);
+		font-weight: 600;
+		line-height: math.div(30, 22);
+		margin-bottom: rem(15);
+	}
+
+	// .card-works__text
+	&__text {
+		@include adaptiveValue("font-size", 16, 12, 0, 1170, 767);
+		@include adaptiveValue("font-size", 16, 12, 1, 767, 502);
+		@include adaptiveValue("font-size", 16, 12, 1, 502, 320);
+		font-weight: 400;
+		line-height: math.div(26, 16);
+	}
+	&_1 {
+		.card-works__illustration {
+			background-color: #9672ff;
+			box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25), 0 100px 80px rgba($color: #9672ff, $alpha: 0.07), 0 65px 47px rgba($color: #9672ff, $alpha: 0.05), 0 38px 25px rgba($color: #9672ff, $alpha: 0.04), 0 20px 13px rgba($color: #9672ff, $alpha: 0.03), 0 8px 7px rgba($color: #9672ff, $alpha: 0.02), 0 2px 3px rgba($color: #9672ff, $alpha: 0.02);
+		}
+	}
+	&_2 {
+		.card-works__illustration {
+			background-color: #4ddffd;
+			box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25), 0 100px 80px rgba($color: #4ddffd, $alpha: 0.07), 0 65px 47px rgba($color: #4ddffd, $alpha: 0.05), 0 38px 25px rgba($color: #4ddffd, $alpha: 0.04), 0 20px 13px rgba($color: #4ddffd, $alpha: 0.03), 0 8px 7px rgba($color: #4ddffd, $alpha: 0.02), 0 2px 3px rgba($color: #4ddffd,$alpha: 0.02);
+		}
+		@media (min-width: em(767)){
+			&:not(:last-child)::after {
+				background: url('@img/border_2.svg') 0 0 / 100% no-repeat;		
+			}
+		}
+	}
+	&_3 {
+		.card-works__illustration {
+			background-color: #f2b8ec;
+			box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25), 0 100px 80px rgba($color: #f2b8ec, $alpha: 0.07), 0 65px 47px rgba($color: #f2b8ec, $alpha: 0.05), 0 38px 25px rgba($color: #f2b8ec, $alpha: 0.04), 0 20px 13px rgba($color: #f2b8ec, $alpha: 0.03), 0 8px 7px rgba($color: #f2b8ec, $alpha: 0.02), 0 2px 3px rgba($color: #f2b8ec, $alpha: 0.02);	
+		}
+	}
+}
+// ===========================================================================================

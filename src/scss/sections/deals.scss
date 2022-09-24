@@ -1,0 +1,245 @@
+.deals {
+	@include adaptiveValue('padding-bottom', 123, 40, 0, 1170, 320);
+
+	// .deals__container
+
+	&__container {
+	}
+
+	// .deals__descr
+
+	&__descr {
+	}
+}
+
+// =================== DESCR-DEALS =========================================
+.descr-deals {
+	&:not(:last-child) {
+		@include adaptiveValue('margin-bottom', 50, 25, 0, 479, 30);
+	}
+	@media (min-width: $mobileSmall) {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	// .descr-deals__text
+	&__text {
+		@include adaptiveValue('flex-basis', 470, 320, 0, 991, 479);
+		flex-grow: 0;
+		flex-shrink: 0;
+		@media (max-width: $mobileSmall) {
+			margin-bottom: 20px;
+			
+		}
+		:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+
+	// .descr-deals__title
+	&__title {
+		@include adaptiveValue('font-size', 40, 23, 0, 991, 479);
+		@include adaptiveValue('font-size', 35, 25, 1, 479, 320);
+	}
+
+	// .descr-deals__subtitle
+	&__subtitle {
+		font-size: rem(16);
+		@include adaptiveValue('font-size', 16, 13, 0, 991, 479);
+		@include adaptiveValue('font-size', 16, 14, 0, 479, 320);
+		line-height: math.div(24, 16);
+	}
+
+	// .descr-deals__button
+	&__button {
+		@media (max-width: $mobile) {
+			font-weight: 400;
+			padding: 10px 10px;
+		}
+		@include adaptiveValue('flex-basis', 200, 140, 0, 991, 479);
+		@include adaptiveValue('font-size', 16, 11, 0, 991, 479);
+		@include adaptiveValue('min-height', 65, 45, 0, 991, 479);
+
+		flex-grow: 0;
+		flex-shrink: 1;
+		border-radius: 5px;
+		font-weight: 700;
+		padding: 21px 10px;
+		align-self: start;
+		box-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25),
+			0 100px 80px rgba($color: #f85a47, $alpha: 0.07),
+			0 65px 46px rgba($color: #f85a47, $alpha: 0.05),
+			0 38px 25px rgba($color: #f85a47, $alpha: 0.04),
+			0 20px 14px rgba($color: #f85a47, $alpha: 0.03),
+			0 8px 6px rgba($color: #f85a47, $alpha: 0.03),
+			0 2px 3px rgba($color: #f85a47, $alpha: 0.02);
+		transition: all 0.3s ease 0s;
+	}
+}
+.block-title {
+	// .block-title__title
+	&__title {
+	}
+}
+// =================== DESCR-DEALS =========================================
+
+// =================== TABS ================================================
+
+.tabs {
+	// .tabs__navigation
+	&__navigation {
+		@include adaptiveValue('margin-bottom', 57, 30, 0, 767, 480);
+		display: flex;
+		// gap: 0 50px;
+		@include adaptiveValue('column-gap', 50, 25, 0, 767, 479);
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+
+	// .tabs__title
+	&__title {
+		font-size: rem(19);
+		// line-height: math.div(25, 19);
+		transition: all 0.2s ease 0s;
+		flex-basis: auto;
+		@include adaptiveValue('font-size', 19, 15, 0, 881, 767);
+		@include adaptiveValue('font-size', 15, 10, 1, 767, 479);
+		@include adaptiveValue('font-size', 20, 20, 1, 479, 320);
+		@media (any-hover: hover) {
+			&:hover {
+				text-shadow: 0 4px 4px rgba($color: #000000, $alpha: 0.25);
+			}
+		}
+	}
+
+	// .tabs__content
+	&__content {
+	}
+
+	// .tabs__body
+	&__body {
+		@media (min-width: $mobileSmall) {
+			animation: {
+				name: content;
+				direction: normal;
+				duration: 0.3s;
+				timing-function: ease-in-out;
+				iteration-count: 1;
+			}
+		}
+	}
+
+	// .tabs__grid
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	// .tabs__item
+	&__item-ibg {
+		cursor: pointer;
+		width: 100%;
+		overflow: hidden;
+		@include adaptiveValue('height', 300, 183, 0, 991, 768);
+		@include adaptiveValue('height', 300, 183, 1, 767.98, 479);
+		@include adaptiveValue('height', 300, 183, 1, 479, 320);
+		@media (any-hover: hover){
+			&:hover img {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	// .tabs__img
+	&__img {
+		border-radius: 5px;
+		transition: all 0.3s ease 0s;
+	}
+
+	//tabs__featured
+	&__featured {
+		top: 14px;
+		left: 14px;
+		padding: 6px 12px;
+	}
+
+	//tabs__3d
+	&__3d {
+		top: 14px;
+		left: 95px;
+		padding: 6px;
+	}
+}
+
+._tab-active {
+	color: $colorOrange;
+	position: relative;
+	@media (min-width: $mobileSmall) {
+		animation: {
+			name: opacity;
+			direction: normal;
+			duration: 0.3s;
+			timing-function: ease-in-out;
+			iteration-count: 1;
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -12px;
+		left: 0;
+		display: inline;
+		width: 100%;
+		height: rem(2);
+		background-color: $colorOrange;
+	}
+}
+
+@keyframes content {
+	from {
+		opacity: 0.6;
+		transform: translateY(5%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes opacity {
+	from {
+		opacity: 0.3;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+._tab-spoller {
+	display: flex;
+	flex-direction: column;
+	.tabs__content {
+		display: flex;
+		flex-direction: column;
+		// gap: 20px;
+		align-items: flex-start;
+		.tabs__body {
+			width: 100%;
+			margin-bottom: rem(25);
+		}
+		.tabs__title {
+			margin-bottom: 25px;
+		}
+	}
+}
+
+// =================== TABS ================================================
